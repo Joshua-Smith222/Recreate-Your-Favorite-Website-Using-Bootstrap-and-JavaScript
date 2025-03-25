@@ -21,45 +21,112 @@
     <body>
         <header>
             <!-- place navbar here -->
-            <header>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="index.html">SocialSync</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <!-- Left-aligned navigation items -->
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="index.html" class="nav-link active" aria-current="page">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="profile.html" class="nav-link">Profile</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="search.html" class="nav-link">Search</a>
-                                </li>
-                            </ul>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">SocialSync</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Left-aligned navigation items -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="profile.html" class="nav-link">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="search.html" class="nav-link">Search</a>
+                            </li>
+                        </ul>
 
-                            <!-- Right-aligned Login and Sign-up -->
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item">
-                                    <a href="login.html" class="nav-link">Login</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="signup.html" class="nav-link btn btn-primary px-3">Sign Up</a>
-                                </li>
+                        <!-- Right-aligned Login and Sign-up -->
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a href="login.html" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="signup.html" class="nav-link btn btn-primary px-3">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <header class="bg-primary text-white text-center py-5">
+            <h1>Welcome to SocialSync</h1>
+            <p>Connect with friends, share moments, and explore trends.</p>
+            <button class="btn btn-light">Get Started</button>
+        </header>
+        <main>
+            <div class="container mt-4">
+                <div class="row">
+                    <!-- Left Sidebar (Trending) -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">Trending Topics</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">#TechNews</li>
+                                <li class="list-group-item">#MusicFest</li>
+                                <li class="list-group-item">#AIRevolution</li>
+                                <li class="list-group-item">#SpaceX</li>
                             </ul>
                         </div>
                     </div>
-                </nav>
-            </header>
 
-        </header>
-        <main></main>
-        <footer>
-            <!-- place footer here -->
+                    <!-- Main Feed -->
+                    <div class="col-md-6">
+                        <!-- Create Post -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="What's on your mind?">
+                                <button class="btn btn-primary mt-2 w-100">Post</button>
+                            </div>
+                        </div>
+
+                        <!-- User Posts -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5>Jane Doe</h5>
+                                <p>Had an amazing weekend hiking! 🌲⛰️</p>
+                                <img src="https://via.placeholder.com/500" class="img-fluid rounded">
+                                <div class="mt-2">
+                                    <button class="btn btn-outline-primary btn-sm">Like</button>
+                                    <button class="btn btn-outline-secondary btn-sm">Comment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5>John Smith</h5>
+                                <p>Just launched my new blog! 🚀</p>
+                                <div class="mt-2">
+                                    <button class="btn btn-outline-primary btn-sm">Like</button>
+                                    <button class="btn btn-outline-secondary btn-sm">Comment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar (Suggestions) -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">People You May Know</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Alice <button class="btn btn-sm btn-primary float-end">Add</button></li>
+                                <li class="list-group-item">Bob <button class="btn btn-sm btn-primary float-end">Add</button></li>
+                                <li class="list-group-item">Charlie <button class="btn btn-sm btn-primary float-end">Add</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-light text-center py-3 mt-4">
+            <p>&copy; 2025 SocialSync. All Rights Reserved.</p>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
         <script
