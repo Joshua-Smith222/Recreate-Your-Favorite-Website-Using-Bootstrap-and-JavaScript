@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialSync | Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">SocialSync</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="profile.html" class="nav-link">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="search.html" class="nav-link">Search</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="signup.html" class="nav-link btn btn-primary px-3">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <h2>Edit Profile Settings</h2>
+
+            <!-- Edit Profile Form -->
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" value="Jane Doe">
+                </div>
+
+                <div class="mb-4">
+                    <label for="bio" class="form-label">Bio</label>
+                    <textarea class="form-control" id="bio" name="bio" rows="4">Web Developer | Tech Enthusiast | Traveler</textarea>
+                </div>
+
+                 <!-- Profile Picture Upload Form -->
+        <div class="mb-4">
+            <h4>Upload Profile Picture</h4>
+            <form id="profilePicForm" enctype="multipart/form-data">
+                <input type="file" name="profilePic" id="profilePic" class="form-control" required>
+                <button type="submit" class="btn btn-primary mt-3">Upload Profile Picture</button>
+            </form>
+            <div id="profilePicMessage" class="mt-2"></div>
+        </div>
+
+        <!-- Photo Library Upload Form -->
+        <div class="mb-4">
+            <h4>Upload Photos to Your Library</h4>
+            <form id="photoLibraryForm" enctype="multipart/form-data">
+                <input type="file" name="photoLibrary" id="photoLibrary" class="form-control" multiple required>
+                <button type="submit" class="btn btn-primary mt-3">Upload Photos</button>
+            </form>
+            <div id="photoLibraryMessage" class="mt-2"></div>
+        </div>
+
+                <!-- Save Changes Button -->
+                <button type="submit" class="btn btn-success">Save Changes</button>
+            </form>
+
+            <hr>
+
+            <h3>Current Profile Picture</h3>
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Profile Picture">
+
+            <h3>Your Photo Library</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/100" class="img-fluid mb-2" alt="Photo 1">
+                </div>
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/100" class="img-fluid mb-2" alt="Photo 2">
+                </div>
+                <div class="col-md-3">
+                    <img src="https://via.placeholder.com/100" class="img-fluid mb-2" alt="Photo 3">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-light text-center py-3 m-auto">
+        <p>&copy; 2025 SocialSync. All Rights Reserved.</p>
+    </footer>
+
+     <!-- Bootstrap and jQuery -->
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+     <!-- Link to your custom JS file -->
+     <script src="js/settings.js"></script></body>
+</html>
