@@ -1,35 +1,59 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+
 const app = express();
 
-// Set up storage engine for Multer
+// Middleware to parse JSON and URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Multer storage config
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Folder where files will be stored
+        cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname)); // Ensure file names are unique
+        cb(null, Date.now() + path.extname(file.originalname));
     }
 });
 
-// Initialize Multer with the storage settings
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
 
-// Handle profile picture upload
+// Serve static files (uploaded images)
+app.use('/uploads', express.static('uploads'));
+
+// Sign-up route
+app.post('/signup', (req, res) => {
+    const { name, email, password } = req.body;
+    console.log('Sign-up data:', { name, email, password });
+    res.json({ message: 'Sign-up successful!' });
+});
+
+// Upload single profile picture
 app.post('/upload-profile-pic', upload.single('profilePic'), (req, res) => {
     if (req.file) {
         res.json({
             message: 'Profile picture uploaded successfully',
-            fileUrl: `/uploads/${req.file.filename}` // Return the file URL
+            fileUrl: `/uploads/${req.file.filename}`,
         });
     } else {
         res.status(400).json({ message: 'Please upload a profile picture.' });
     }
 });
 
-// Serve static files (e.g., uploaded images)
-app.use('/uploads', express.static('uploads'));
+// Upload multiple photos (photo library)
+app.post('/upload-photos', upload.array('photoLibrary', 10), (req, res) => {
+    if (req.files) {
+        const fileUrls = req.files.map(file => `/uploads/${file.filename}`);
+        res.json({
+            message: 'Photos uploaded successfully',
+            fileUrls,
+        });
+    } else {
+        res.status(400).json({ message: 'Please upload photos.' });
+    }
+});
 
 // Start the server
 const PORT = process.env.PORT || 5500;
