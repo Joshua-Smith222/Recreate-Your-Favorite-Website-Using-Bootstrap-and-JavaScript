@@ -9,3 +9,31 @@
 main {
     background-color: rgb(107, 26, 107);
 }
+
+body {
+    padding-bottom: 70px;
+    background-color: rgb(107, 26, 107); /* Or whatever color you want */
+  }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+ main {
+    flex: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1000;
+    border-top: 1px solid #dee2e6;
+  }
