@@ -24,7 +24,11 @@ export default function SignUpForm() {
       });
       setMessage(response.data.message);
     } catch (err) {
-      setError('Error signing up. Please try again.');
+      // You can log the error here to inspect its details
+      console.error(err);  // This logs the full error to the console
+
+      // Optionally, you can show a detailed error message
+      setError(err.response?.data?.message || 'Error signing up. Please try again.');
     }
   };
 
