@@ -3,9 +3,9 @@ const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
 
-const app = express(); // Define the app first
+const app = express();
 
-// Enable CORS
+// Enable CORS for all routes
 app.use(cors());
 
 // Middleware to parse JSON and URL-encoded data
@@ -26,6 +26,9 @@ const upload = multer({ storage });
 
 // Serve static files (uploaded images)
 app.use('/uploads', express.static('uploads'));
+
+// Handle preflight OPTIONS requests
+app.options('*', cors());
 
 // Sign-up route
 app.post('/signup', (req, res) => {
