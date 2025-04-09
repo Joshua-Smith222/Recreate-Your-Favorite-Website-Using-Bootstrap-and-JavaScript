@@ -16,21 +16,22 @@ export default function SignUpForm() {
     setMessage('');
 
     try {
-      // Send data to backend route
-      const response = await axios.post('http://localhost:5500/signup', {
-        name,
-        email,
-        password,
-      });
-      setMessage(response.data.message);
-    } catch (err) {
-      // You can log the error here to inspect its details
-      console.error(err);  // This logs the full error to the console
-
-      // Optionally, you can show a detailed error message
-      setError(err.response?.data?.message || 'Error signing up. Please try again.');
-    }
-  };
+        // Send data to backend route
+        const response = await axios.post('http://localhost:5500/signup', {
+          name,
+          email,
+          password,
+        }, {
+          headers: {
+            'Content-Type': 'application/json',  // Ensure content type is set
+          }
+        });
+        setMessage(response.data.message);
+      } catch (err) {
+        console.error(err);  // This logs the full error to the console
+        setError(err.response?.data?.message || 'Error signing up. Please try again.');
+      }
+    };
 
   return (
     <div className="container py-5" style={{ maxWidth: '600px' }}>
